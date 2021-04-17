@@ -1,0 +1,17 @@
+[package]
+name = "rcount"
+version = "0.1.0"
+authors = ["Kevin Harnata <kevin.harnata@gdn-commerce.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+walkdir = "2"
+structopt = "0.3.21"
+
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+panic = 'abort'
